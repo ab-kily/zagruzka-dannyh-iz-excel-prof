@@ -1,0 +1,1733 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаВыбратьФайл" id="10">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыбратьФайл</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьФайлРасширеннаяПодсказка" id="11"/>
+			</Button>
+			<Button name="ФормаПрочитатьФайл" id="12">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПрочитатьФайл</CommandName>
+				<ExtendedTooltip name="ФормаПрочитатьФайлРасширеннаяПодсказка" id="13"/>
+			</Button>
+			<Button name="ФормаЗагрузитьДанные" id="14">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗагрузитьДанные</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьДанныеРасширеннаяПодсказка" id="15"/>
+			</Button>
+			<Button name="ФормаСохранитьНастройкиЗагрузки" id="16">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьНастройкиЗагрузки</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьНастройкиЗагрузкиРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="ФормаЗагрузитьНастройкиЗагрузки" id="18">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьНастройкиЗагрузки</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьНастройкиЗагрузкиРасширеннаяПодсказка" id="19"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПанельПодсказки" id="90">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подсказка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаПанельПодсказкиРасширеннаяПодсказка" id="91"/>
+			<ChildItems>
+				<LabelDecoration name="НадписьТекстПодсказки" id="92">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content/>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьТекстПодсказкиКонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="НадписьТекстПодсказкиРасширеннаяПодсказка" id="94"/>
+				</LabelDecoration>
+				<LabelDecoration name="НадписьПодсказкаЗакрыть" id="95">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нажмите «?» ещё раз, чтобы скрыть подсказку</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ContextMenu name="НадписьПодсказкаЗакрытьКонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="НадписьПодсказкаЗакрытьРасширеннаяПодсказка" id="97"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаФайл" id="100">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор файла, листа Excel и признака строки заголовков.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<ExtendedTooltip name="ГруппаФайлРасширеннаяПодсказка" id="101"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлу" id="102">
+					<DataPath>ПутьКФайлу</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="103"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полный путь к выбранному файлу Excel/CSV/ODS. Заполняется кнопкой «Выбрать файл».</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="104"/>
+				</InputField>
+				<InputField name="ИмяЛиста" id="105">
+					<DataPath>ИмяЛиста</DataPath>
+					<DropListButton>true</DropListButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<Width>16</Width>
+					<ContextMenu name="ИмяЛистаКонтекстноеМеню" id="106"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Лист книги Excel для чтения. При смене листа данные перечитываются автоматически.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="ИмяЛистаРасширеннаяПодсказка" id="107"/>
+					<Events>
+						<Event name="OnChange">ИмяЛистаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ПерваяСтрокаЗаголовки" id="108">
+					<DataPath>ПерваяСтрокаЗаголовки</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПерваяСтрокаЗаголовкиКонтекстноеМеню" id="109"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если включено — первая строка файла берётся как названия колонок для маппинга. Иначе колонки именуются «Колонка1», «Колонка2»…</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="ПерваяСтрокаЗаголовкиРасширеннаяПодсказка" id="110"/>
+					<Events>
+						<Event name="OnChange">ПерваяСтрокаЗаголовкиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="200">
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="201"/>
+			<ChildItems>
+				<Page name="СтраницаДанные" id="210">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные файла</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Чтение файла и предпросмотр строк.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="СтраницаДанныеРасширеннаяПодсказка" id="211"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПредпросмотрНастройки" id="212">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПредпросмотрНастройкиРасширеннаяПодсказка" id="213"/>
+							<ChildItems>
+								<InputField name="КоличествоСтрокПредпросмотра" id="214">
+									<DataPath>КоличествоСтрокПредпросмотра</DataPath>
+									<Width>8</Width>
+									<ContextMenu name="КоличествоСтрокПредпросмотраКонтекстноеМеню" id="215"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько первых строк показывать в таблице предпросмотра (по умолчанию 50).</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="КоличествоСтрокПредпросмотраРасширеннаяПодсказка" id="216"/>
+								</InputField>
+								<CheckBoxField name="ПоказатьВсеСтроки" id="217">
+									<DataPath>ПоказатьВсеСтроки</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПоказатьВсеСтрокиКонтекстноеМеню" id="218"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показать в предпросмотре все строки файла (с ограничением сверху, чтобы не зависнуть на огромных файлах).</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПоказатьВсеСтрокиРасширеннаяПодсказка" id="219"/>
+								</CheckBoxField>
+								<Button name="ФормаОбновитьПредпросмотр" id="220">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОбновитьПредпросмотр</CommandName>
+									<ExtendedTooltip name="ФормаОбновитьПредпросмотрРасширеннаяПодсказка" id="221"/>
+								</Button>
+								<LabelField name="ВсегоСтрокФайла" id="222">
+									<DataPath>ВсегоСтрокФайла</DataPath>
+									<ContextMenu name="ВсегоСтрокФайлаКонтекстноеМеню" id="223"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько строк данных найдено в файле после чтения (без строки заголовков, если она учтена).</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ВсегоСтрокФайлаРасширеннаяПодсказка" id="224"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ДанныеФайла" id="230">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<DataPath>ДанныеФайла</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеФайлаКонтекстноеМеню" id="231"/>
+							<AutoCommandBar name="ДанныеФайлаКоманднаяПанель" id="232">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предпросмотр содержимого выбранного листа/файла. Колонки появляются после чтения.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<ExtendedTooltip name="ДанныеФайлаРасширеннаяПодсказка" id="233"/>
+							<SearchStringAddition name="ДанныеФайлаСтрокаПоиска" id="234">
+								<AdditionSource>
+									<Item>ДанныеФайла</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеФайлаСтрокаПоискаКонтекстноеМеню" id="235"/>
+								<ExtendedTooltip name="ДанныеФайлаСтрокаПоискаРасширеннаяПодсказка" id="236"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеФайлаСостояниеПросмотра" id="237">
+								<AdditionSource>
+									<Item>ДанныеФайла</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеФайлаСостояниеПросмотраКонтекстноеМеню" id="238"/>
+								<ExtendedTooltip name="ДанныеФайлаСостояниеПросмотраРасширеннаяПодсказка" id="239"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеФайлаУправлениеПоиском" id="240">
+								<AdditionSource>
+									<Item>ДанныеФайла</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеФайлаУправлениеПоискомКонтекстноеМеню" id="241"/>
+								<ExtendedTooltip name="ДанныеФайлаУправлениеПоискомРасширеннаяПодсказка" id="242"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОбъект" id="300">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект и соответствие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор объекта загрузки и настройка соответствия колонок.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="СтраницаОбъектРасширеннаяПодсказка" id="301"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОбъект" id="302">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект загрузки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>WeakSeparation</Representation>
+							<ShowTitle>true</ShowTitle>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Куда загружать данные: тип и имя объекта текущей конфигурации.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<ExtendedTooltip name="ГруппаОбъектРасширеннаяПодсказка" id="303"/>
+							<ChildItems>
+								<InputField name="ТипДанных" id="304">
+									<DataPath>ТипДанных</DataPath>
+									<DropListButton>true</DropListButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="ТипДанныхКонтекстноеМеню" id="305"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Куда грузить: справочник, документ или регистр сведений текущей конфигурации.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ТипДанныхРасширеннаяПодсказка" id="306"/>
+									<Events>
+										<Event name="OnChange">ТипДанныхПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ИмяОбъектаМетаданных" id="307">
+									<DataPath>ИмяОбъектаМетаданных</DataPath>
+									<DropListButton>true</DropListButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ИмяОбъектаМетаданныхКонтекстноеМеню" id="308"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Конкретный объект метаданных выбранного типа. Список строится из Метаданные текущей базы.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ИмяОбъектаМетаданныхРасширеннаяПодсказка" id="309"/>
+									<Events>
+										<Event name="OnChange">ИмяОбъектаМетаданныхПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКолонкиОбъекта" id="310">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКолонкиОбъектаРасширеннаяПодсказка" id="311"/>
+							<ChildItems>
+								<Table name="РеквизитыОбъекта" id="320">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Width>40</Width>
+									<DataPath>РеквизитыОбъекта</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="РеквизитыОбъектаКонтекстноеМеню" id="321"/>
+									<AutoCommandBar name="РеквизитыОбъектаКоманднаяПанель" id="322">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Список реквизитов выбранного объекта метаданных с типами — справочник для маппинга.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="РеквизитыОбъектаРасширеннаяПодсказка" id="323"/>
+									<SearchStringAddition name="РеквизитыОбъектаСтрокаПоиска" id="324">
+										<AdditionSource>
+											<Item>РеквизитыОбъекта</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РеквизитыОбъектаСтрокаПоискаКонтекстноеМеню" id="325"/>
+										<ExtendedTooltip name="РеквизитыОбъектаСтрокаПоискаРасширеннаяПодсказка" id="326"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="РеквизитыОбъектаСостояниеПросмотра" id="327">
+										<AdditionSource>
+											<Item>РеквизитыОбъекта</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РеквизитыОбъектаСостояниеПросмотраКонтекстноеМеню" id="328"/>
+										<ExtendedTooltip name="РеквизитыОбъектаСостояниеПросмотраРасширеннаяПодсказка" id="329"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="РеквизитыОбъектаУправлениеПоиском" id="330">
+										<AdditionSource>
+											<Item>РеквизитыОбъекта</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="РеквизитыОбъектаУправлениеПоискомКонтекстноеМеню" id="331"/>
+										<ExtendedTooltip name="РеквизитыОбъектаУправлениеПоискомРасширеннаяПодсказка" id="332"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="РеквизитыОбъектаСиноним" id="333">
+											<DataPath>РеквизитыОбъекта.Синоним</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыОбъектаСинонимКонтекстноеМеню" id="334"/>
+											<ExtendedTooltip name="РеквизитыОбъектаСинонимРасширеннаяПодсказка" id="335"/>
+										</InputField>
+										<InputField name="РеквизитыОбъектаИмя" id="336">
+											<DataPath>РеквизитыОбъекта.Имя</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыОбъектаИмяКонтекстноеМеню" id="337"/>
+											<ExtendedTooltip name="РеквизитыОбъектаИмяРасширеннаяПодсказка" id="338"/>
+										</InputField>
+										<InputField name="РеквизитыОбъектаТипПредставление" id="339">
+											<DataPath>РеквизитыОбъекта.ТипПредставление</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыОбъектаТипПредставлениеКонтекстноеМеню" id="340"/>
+											<ExtendedTooltip name="РеквизитыОбъектаТипПредставлениеРасширеннаяПодсказка" id="341"/>
+										</InputField>
+										<InputField name="РеквизитыОбъектаКатегория" id="342">
+											<DataPath>РеквизитыОбъекта.Категория</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыОбъектаКатегорияКонтекстноеМеню" id="343"/>
+											<ExtendedTooltip name="РеквизитыОбъектаКатегорияРасширеннаяПодсказка" id="344"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<Table name="МаппингКолонок" id="350">
+									<Representation>List</Representation>
+									<DataPath>МаппингКолонок</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="МаппингКолонокКонтекстноеМеню" id="351"/>
+									<AutoCommandBar name="МаппингКолонокКоманднаяПанель" id="352"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Соответствие: колонка файла ↔ реквизит объекта. Автоподбор по именам можно поправить вручную.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="МаппингКолонокРасширеннаяПодсказка" id="353"/>
+									<SearchStringAddition name="МаппингКолонокСтрокаПоиска" id="354">
+										<AdditionSource>
+											<Item>МаппингКолонок</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="МаппингКолонокСтрокаПоискаКонтекстноеМеню" id="355"/>
+										<ExtendedTooltip name="МаппингКолонокСтрокаПоискаРасширеннаяПодсказка" id="356"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="МаппингКолонокСостояниеПросмотра" id="357">
+										<AdditionSource>
+											<Item>МаппингКолонок</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="МаппингКолонокСостояниеПросмотраКонтекстноеМеню" id="358"/>
+										<ExtendedTooltip name="МаппингКолонокСостояниеПросмотраРасширеннаяПодсказка" id="359"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="МаппингКолонокУправлениеПоиском" id="360">
+										<AdditionSource>
+											<Item>МаппингКолонок</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="МаппингКолонокУправлениеПоискомКонтекстноеМеню" id="361"/>
+										<ExtendedTooltip name="МаппингКолонокУправлениеПоискомРасширеннаяПодсказка" id="362"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnActivateRow">МаппингКолонокПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="МаппингКолонокЗаголовокКолонкиФайла" id="363">
+											<DataPath>МаппингКолонок.ЗаголовокКолонкиФайла</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="МаппингКолонокЗаголовокКолонкиФайлаКонтекстноеМеню" id="364"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Название колонки из файла (заголовок или «КолонкаN»). Только для просмотра.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокЗаголовокКолонкиФайлаРасширеннаяПодсказка" id="365"/>
+										</InputField>
+										<InputField name="МаппингКолонокИмяРеквизита" id="366">
+											<DataPath>МаппингКолонок.ИмяРеквизита</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChooseType>false</ChooseType>
+											<ContextMenu name="МаппингКолонокИмяРеквизитаКонтекстноеМеню" id="367"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Реквизит/измерение/ресурс объекта, куда писать значение из колонки. Пусто — колонку не загружать.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокИмяРеквизитаРасширеннаяПодсказка" id="368"/>
+											<Events>
+												<Event name="OnChange">МаппингКолонокИмяРеквизитаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="МаппингКолонокТипПредставление" id="369">
+											<DataPath>МаппингКолонок.ТипПредставление</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="МаппингКолонокТипПредставлениеКонтекстноеМеню" id="370"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип выбранного реквизита (строка, число, ссылка и т.д.).</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокТипПредставлениеРасширеннаяПодсказка" id="371"/>
+										</InputField>
+										<CheckBoxField name="МаппингКолонокЭтоСсылка" id="372">
+											<DataPath>МаппингКолонок.ЭтоСсылка</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="МаппингКолонокЭтоСсылкаКонтекстноеМеню" id="373"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Реквизит ссылочный (справочник/документ…). Тогда нужно задать «Искать ссылку по» и действие, если не найден.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокЭтоСсылкаРасширеннаяПодсказка" id="374"/>
+										</CheckBoxField>
+										<CheckBoxField name="МаппингКолонокИскатьСуществующий" id="375">
+											<DataPath>МаппингКолонок.ИскатьСуществующий</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="МаппингКолонокИскатьСуществующийКонтекстноеМеню" id="376"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Искать уже существующий объект по этому полю (код, наименование, номер, измерение) и обновлять его, а не создавать дубль.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокИскатьСуществующийРасширеннаяПодсказка" id="377"/>
+										</CheckBoxField>
+										<CheckBoxField name="МаппингКолонокВсегдаСоздаватьНовый" id="378">
+											<DataPath>МаппингКолонок.ВсегдаСоздаватьНовый</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="МаппингКолонокВсегдаСоздаватьНовыйКонтекстноеМеню" id="379"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Не искать существующий — всегда создавать новый объект по строке файла.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокВсегдаСоздаватьНовыйРасширеннаяПодсказка" id="380"/>
+											<Events>
+												<Event name="OnChange">МаппингКолонокВсегдаСоздаватьНовыйПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="МаппингКолонокИмяРеквизитаПоискаСсылки" id="381">
+											<DataPath>МаппингКолонок.ИмяРеквизитаПоискаСсылки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="МаппингКолонокИмяРеквизитаПоискаСсылкиКонтекстноеМеню" id="382"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>По какому реквизиту целевого справочника/документа искать ссылку (Код, Наименование, Артикул…).</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокИмяРеквизитаПоискаСсылкиРасширеннаяПодсказка" id="383"/>
+										</InputField>
+										<InputField name="МаппингКолонокДействиеЕслиНеНайден" id="384">
+											<DataPath>МаппингКолонок.ДействиеЕслиНеНайден</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="МаппингКолонокДействиеЕслиНеНайденКонтекстноеМеню" id="385"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Если ссылка не найдена: создать новый, оставить пустым или прервать загрузку с ошибкой.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокДействиеЕслиНеНайденРасширеннаяПодсказка" id="386"/>
+										</InputField>
+										<CheckBoxField name="МаппингКолонокРазбиратьСоставнойКлюч" id="387">
+											<DataPath>МаппингКолонок.РазбиратьСоставнойКлюч</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="МаппингКолонокРазбиратьСоставнойКлючКонтекстноеМеню" id="388"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Разбирать значение вида «Иванов И.И. / Отдел продаж» на части по разделителю (для иерархии/родителя).</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокРазбиратьСоставнойКлючРасширеннаяПодсказка" id="389"/>
+										</CheckBoxField>
+										<InputField name="МаппингКолонокРазделительКлюча" id="390">
+											<DataPath>МаппингКолонок.РазделительКлюча</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="МаппингКолонокРазделительКлючаКонтекстноеМеню" id="391"/>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Разделитель частей составного ключа (например « / »).</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="МаппингКолонокРазделительКлючаРасширеннаяПодсказка" id="392"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЗагрузка" id="500">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка и протокол</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры запуска, прогресс и протокол результата.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="СтраницаЗагрузкаРасширеннаяПодсказка" id="501"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПараметрыЗагрузки" id="502">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыЗагрузкиРасширеннаяПодсказка" id="503"/>
+							<ChildItems>
+								<CheckBoxField name="ПрерыватьПриОшибке" id="504">
+									<DataPath>ПрерыватьПриОшибке</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПрерыватьПриОшибкеКонтекстноеМеню" id="505"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При ошибке в строке остановить всю загрузку. Если выключено — строка с ошибкой пишется в протокол, остальные продолжают грузиться.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПрерыватьПриОшибкеРасширеннаяПодсказка" id="506"/>
+								</CheckBoxField>
+								<InputField name="РазделительСоставногоКлюча" id="507">
+									<DataPath>РазделительСоставногоКлюча</DataPath>
+									<Width>8</Width>
+									<ContextMenu name="РазделительСоставногоКлючаКонтекстноеМеню" id="508"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разделитель по умолчанию для составных ключей ссылок, если в строке маппинга свой разделитель не задан.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="РазделительСоставногоКлючаРасширеннаяПодсказка" id="509"/>
+								</InputField>
+								<InputField name="РазделительCSV" id="510">
+									<DataPath>РазделительCSV</DataPath>
+									<Width>6</Width>
+									<ContextMenu name="РазделительCSVКонтекстноеМеню" id="511"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разделитель полей CSV (; , или таб). Пусто — определить автоматически по первой строке.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="РазделительCSVРасширеннаяПодсказка" id="512"/>
+								</InputField>
+								<InputField name="ИмяШаблонаНастроек" id="513">
+									<DataPath>ИмяШаблонаНастроек</DataPath>
+									<ContextMenu name="ИмяШаблонаНастроекКонтекстноеМеню" id="514"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя сохранённого шаблона маппинга в хранилище настроек. Нужно для кнопок «Сохранить/Загрузить настройки».</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ИмяШаблонаНастроекРасширеннаяПодсказка" id="515"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<ProgressBarField name="ИндикаторПрогресса" id="520">
+							<DataPath>ИндикаторПрогресса</DataPath>
+							<ShowPercent>false</ShowPercent>
+							<ContextMenu name="ИндикаторПрогрессаКонтекстноеМеню" id="521"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сколько строк файла уже обработано при загрузке.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<ExtendedTooltip name="ИндикаторПрогрессаРасширеннаяПодсказка" id="522"/>
+						</ProgressBarField>
+						<UsualGroup name="ГруппаИтоги" id="530">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИтогиРасширеннаяПодсказка" id="531"/>
+							<ChildItems>
+								<LabelField name="СозданоОбъектов" id="532">
+									<DataPath>СозданоОбъектов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Создано</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СозданоОбъектовКонтекстноеМеню" id="533"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько новых объектов/записей создано в этой загрузке.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="СозданоОбъектовРасширеннаяПодсказка" id="534"/>
+								</LabelField>
+								<LabelField name="ОбновленоОбъектов" id="535">
+									<DataPath>ОбновленоОбъектов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обновлено</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОбновленоОбъектовКонтекстноеМеню" id="536"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько существующих объектов обновлено (найдены по ключевым полям).</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ОбновленоОбъектовРасширеннаяПодсказка" id="537"/>
+								</LabelField>
+								<LabelField name="СтрокСОшибками" id="538">
+									<DataPath>СтрокСОшибками</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибок</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СтрокСОшибкамиКонтекстноеМеню" id="539"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько строк файла завершились ошибкой.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="СтрокСОшибкамиРасширеннаяПодсказка" id="540"/>
+								</LabelField>
+								<LabelField name="ПропущеноСтрок" id="541">
+									<DataPath>ПропущеноСтрок</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пропущено</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПропущеноСтрокКонтекстноеМеню" id="542"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сколько строк пропущено без записи.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПропущеноСтрокРасширеннаяПодсказка" id="543"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПротоколЗагрузки" id="550">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<DataPath>ПротоколЗагрузки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПротоколЗагрузкиКонтекстноеМеню" id="551"/>
+							<AutoCommandBar name="ПротоколЗагрузкиКоманднаяПанель" id="552">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Итог построчной загрузки: статус, ошибки, ссылка на объект.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<ExtendedTooltip name="ПротоколЗагрузкиРасширеннаяПодсказка" id="553"/>
+							<SearchStringAddition name="ПротоколЗагрузкиСтрокаПоиска" id="554">
+								<AdditionSource>
+									<Item>ПротоколЗагрузки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПротоколЗагрузкиСтрокаПоискаКонтекстноеМеню" id="555"/>
+								<ExtendedTooltip name="ПротоколЗагрузкиСтрокаПоискаРасширеннаяПодсказка" id="556"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПротоколЗагрузкиСостояниеПросмотра" id="557">
+								<AdditionSource>
+									<Item>ПротоколЗагрузки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПротоколЗагрузкиСостояниеПросмотраКонтекстноеМеню" id="558"/>
+								<ExtendedTooltip name="ПротоколЗагрузкиСостояниеПросмотраРасширеннаяПодсказка" id="559"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПротоколЗагрузкиУправлениеПоиском" id="560">
+								<AdditionSource>
+									<Item>ПротоколЗагрузки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПротоколЗагрузкиУправлениеПоискомКонтекстноеМеню" id="561"/>
+								<ExtendedTooltip name="ПротоколЗагрузкиУправлениеПоискомРасширеннаяПодсказка" id="562"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПротоколЗагрузкиВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПротоколЗагрузкиНомерСтрокиФайла" id="563">
+									<DataPath>ПротоколЗагрузки.НомерСтрокиФайла</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПротоколЗагрузкиНомерСтрокиФайлаКонтекстноеМеню" id="564"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер строки в исходном файле.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПротоколЗагрузкиНомерСтрокиФайлаРасширеннаяПодсказка" id="565"/>
+								</InputField>
+								<InputField name="ПротоколЗагрузкиСтатус" id="566">
+									<DataPath>ПротоколЗагрузки.Статус</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПротоколЗагрузкиСтатусКонтекстноеМеню" id="567"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Результат по строке: Создан, Обновлен, Ошибка, Пропущен.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПротоколЗагрузкиСтатусРасширеннаяПодсказка" id="568"/>
+								</InputField>
+								<InputField name="ПротоколЗагрузкиПредставлениеОбъекта" id="569">
+									<DataPath>ПротоколЗагрузки.ПредставлениеОбъекта</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CellHyperlink>true</CellHyperlink>
+									<ContextMenu name="ПротоколЗагрузкиПредставлениеОбъектаКонтекстноеМеню" id="570"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Созданный или обновлённый объект. Двойной щелчок открывает его в 1С.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПротоколЗагрузкиПредставлениеОбъектаРасширеннаяПодсказка" id="571"/>
+								</InputField>
+								<InputField name="ПротоколЗагрузкиОписание" id="572">
+									<DataPath>ПротоколЗагрузки.Описание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПротоколЗагрузкиОписаниеКонтекстноеМеню" id="573"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текст ошибки или пояснение по строке.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<ExtendedTooltip name="ПротоколЗагрузкиОписаниеРасширеннаяПодсказка" id="574"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ЗагрузкаДанныхИзExcelПроф</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПутьКФайлу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайла" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресДанныхФайла" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресКэшаСсылок" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяЛиста" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лист</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>256</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПерваяСтрокаЗаголовки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Первая строка — заголовки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипДанных" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяОбъектаМетаданных" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоСтрокПредпросмотра" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строк предпросмотра</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказатьВсеСтроки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать все строки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрерыватьПриОшибке" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прерывать загрузку при ошибке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяШаблонаНастроек" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительCSV" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разделитель CSV</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>5</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительСоставногоКлюча" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разделитель составного ключа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РасширениеФайла" id="16">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВсегоСтрокФайла" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строк в файле</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИндикаторПрогресса" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прогресс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИндексСледующейСтроки" id="19">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагрузкаИдет" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СозданоОбъектов" id="21">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбновленоОбъектов" id="22">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокСОшибками" id="23">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПропущеноСтрок" id="24">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РазмерПорции" id="25">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеФайла" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предпросмотр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns/>
+		</Attribute>
+		<Attribute name="МаппингКолонок" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие колонок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяКолонкиФайла" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонка файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗаголовокКолонкиФайла" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заголовок в файле</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяРеквизита" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизит объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеРеквизита" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПредставление" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоСсылка" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмяСсылочногоТипа" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип ссылки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИскатьСуществующий" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Искать существующий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВсегдаСоздаватьНовый" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всегда создавать новый</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Обязательный" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обязательный</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИмяРеквизитаПоискаСсылки" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Искать ссылку по</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДействиеЕслиНеНайден" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если не найден</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РазбиратьСоставнойКлюч" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Составной ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РазделительКлюча" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разделитель ключа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяТабличнойЧасти" id="15">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИменаРеквизитовПоиска" id="16">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РеквизитыОбъекта" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Синоним" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синоним</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяТабличнойЧасти" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ТЧ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПредставление" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоСсылка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмяСсылочногоТипа" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Категория" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Категория</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроверкаЗаполнения" id="8">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИменаРеквизитовПоиска" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПротоколЗагрузки" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Протокол загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НомерСтрокиФайла" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Описание" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НавигационнаяСсылка" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеОбъекта" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КлючАктивнойПодсказки" id="80">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстПодсказки" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подсказка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть диалог выбора файла (xlsx, xls, csv, ods) и поместить его во временное хранилище для чтения на сервере.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьФайл</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПрочитатьФайл" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Принудительно перечитать файл с текущими настройками листа и заголовков. Обычно срабатывает само при смене листа/галочки.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрочитатьФайл</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузитьДанные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать строки файла в выбранный объект метаданных по таблице соответствий. Транзакция — на каждую строку.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДанные</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьНастройкиЗагрузки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить текущий маппинг и параметры под указанным именем шаблона в хранилище настроек.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройкиЗагрузки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузитьНастройкиЗагрузки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подставить ранее сохранённый шаблон маппинга по имени из поля «Шаблон настроек».</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьНастройкиЗагрузки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьПредпросмотр" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить предпросмотр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить таблицу предпросмотра с учётом лимита строк / «Показать все».</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьПредпросмотр</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
